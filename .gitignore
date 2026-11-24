@@ -1,0 +1,33 @@
+# ---------- Credenciales ----------
+.env
+.env.*
+!.env.example
+
+# ---------- Datos académicos / personales (NUNCA subir) ----------
+data/
+config_materias*.json
+snapshot_academico*.json
+historia_academica_aprobadas.csv
+*.csv
+debug/
+
+# HTML/PDF/TXT exportados de SIMCA (contienen cédula, notas, cookies y a veces credenciales)
+SIMCA_*.html
+SIMCA_*.pdf
+CODIGO_DEMO.html
+NOTAS.txt
+PENSUM.txt
+pensum.pdf
+samples/
+
+# ---------- Python / entorno ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.streamlit/secrets.toml
+
+# ---------- Playwright ----------
+playwright-report/
+test-results/

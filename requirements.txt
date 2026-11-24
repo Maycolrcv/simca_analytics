@@ -1,0 +1,17 @@
+# ============================================================
+# SIMCA Analytics - dependencias de ejecución
+# Python >= 3.10
+# ============================================================
+
+# --- Interfaz ---
+streamlit>=1.50,<2          # st.navigation / st.Page, st.data_editor, st.toggle
+pandas>=2.1,<4              # tablas y exportación CSV
+
+# --- Scraping ---
+playwright>=1.48,<2         # login y navegación en SIMCA (luego: playwright install chromium)
+beautifulsoup4>=4.12,<5     # parseo del HTML de pensum y notas
+lxml>=5.0,<7                # parser rápido para BeautifulSoup (hay fallback a html.parser)
+
+# --- Seguridad / persistencia ---
+python-dotenv>=1.0,<2       # credenciales SOLO desde .env / variables de entorno
+filelock>=3.13,<4           # bloqueo entre procesos/pestañas al escribir el JSON de configuración
