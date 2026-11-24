@@ -124,6 +124,15 @@ if not errorlevel 1 (
     goto :pausa
 )
 echo OK: nada sensible en el commit.
+echo Verificando que el codigo de la aplicacion quedo incluido...
+for %%F in (app.py simca/__init__.py simca/auth.py simca/state.py simca/settings.py views/matriz.py views/configuracion.py) do (
+    git ls-files --error-unmatch "%%F" >nul 2>&1
+    if errorlevel 1 (
+        echo [ERROR] %%F NO esta en el repositorio. Revisa .gitignore y la carpeta del proyecto.
+        goto :pausa
+    )
+)
+echo OK: el codigo esta completo.
 git commit -m "SIMCA Analytics" >nul 2>&1
 git remote get-url origin >nul 2>&1
 if not errorlevel 1 goto :push
